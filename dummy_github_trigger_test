@@ -1,0 +1,1 @@
+This is just a dummy test to verify that every time someone makes a commit in the repository, Github notifies Jenkins to trigger a job.
