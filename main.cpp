@@ -15,7 +15,7 @@ int main()
     std::cout << "sqrt(144): " << anotherFeature<unsigned int>(144) << std::endl; //should produce a warning (instantiation of sqrt function with 'unsigned int values'. Produces an 'unsigned int' from 'double' conversion warning)
     bool some_failure = false;
 
-    int a //this is a compiler error (missing ';')
+    //int a //this is a compiler error (missing ';')
 
     if (some_failure)
          return EXIT_FAILURE;
