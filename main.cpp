@@ -21,6 +21,8 @@ int main()
 
     std::string abcde = "abcd" + 'e'; //unusual pointer arithmetic .. the abcde string will not get the value "abcde"
 
+    char* this_is_a_string = (char*) malloc(10 * sizeof(char));
+
     if (some_failure)
          return EXIT_FAILURE;
     else
