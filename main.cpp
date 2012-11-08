@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include "oneFeature.h"
 #include "anotherFeature.h"
+#include "oneClass.h"
 
 char unused_function(){return 'a';} //this is an unused function
 
@@ -29,6 +30,9 @@ int main()
     std::string abcde = "abcd" + 'e'; //unusual pointer arithmetic .. the abcde string will not get the value "abcde"
 
     leak(); //this is a memory leak
+
+    oneClass dummyObject = oneClass();
+    dummyObject.doSomething();
 
     if (some_failure)
          return EXIT_FAILURE;

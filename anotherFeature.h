@@ -3,6 +3,9 @@
 
 #include <math.h>
 
+/*!
+ *  This templated function sqrt(a) (it has a bug)
+ */
 template <class T>
 T anotherFeature(T a)
 {

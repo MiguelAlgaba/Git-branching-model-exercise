@@ -3,6 +3,9 @@
 
 #include <math.h>
 
+/*!
+ *  This templated function returns base^exponent
+ */
 template <class T>
 T oneFeature(T base,T exponent)
 {
