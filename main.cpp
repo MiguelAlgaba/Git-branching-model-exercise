@@ -17,6 +17,8 @@ int main()
 
     //int a //this is a compiler error (missing ';')
 
+    std::string abcde = "abcd" + 'e'; //unusual pointer arithmetic .. the abcde string will not get the value "abcde"
+
     if (some_failure)
          return EXIT_FAILURE;
     else
