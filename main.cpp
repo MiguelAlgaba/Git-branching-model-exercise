@@ -3,6 +3,8 @@
 #include "oneFeature.h"
 #include "anotherFeature.h"
 
+char unused_function(){return 'a';} //this is an unused function
+
 int main()
 {
     int this_is_an_unused_variable; //should produce a warning (unused variable)
