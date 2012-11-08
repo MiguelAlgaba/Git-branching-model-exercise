@@ -5,6 +5,13 @@
 
 char unused_function(){return 'a';} //this is an unused function
 
+void leak()
+{
+    std::cout << "leak" << std::endl;
+
+    int* i = new int(42);
+}
+
 int main()
 {
     int this_is_an_unused_variable; //should produce a warning (unused variable)
@@ -21,7 +28,7 @@ int main()
 
     std::string abcde = "abcd" + 'e'; //unusual pointer arithmetic .. the abcde string will not get the value "abcde"
 
-    char* this_is_a_string = (char*) malloc(10 * sizeof(char));
+    leak(); //this is a memory leak
 
     if (some_failure)
          return EXIT_FAILURE;
