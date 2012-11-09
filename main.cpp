@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <cstdlib>
 #include "oneFeature.h"
 #include "anotherFeature.h"
@@ -23,7 +24,6 @@ int main()
     std::cout << "main()" << std::endl;
     std::cout << "pow(2.0,10.0): " << oneFeature<double>(2.0,10.0) << std::endl;
     std::cout << "sqrt(144): " << anotherFeature<unsigned int>(144) << std::endl; //should produce a warning (instantiation of sqrt function with 'unsigned int values'. Produces an 'unsigned int' from 'double' conversion warning)
-    bool some_failure = false;
 
     //int a //this is a compiler error (missing ';')
 
@@ -31,13 +31,25 @@ int main()
 
     leak(); //this is a memory leak
 
+    //this is just an object that prints some text
     oneClass dummyObject = oneClass();
     dummyObject.doSomething();
 
-    if (some_failure)
-         return EXIT_FAILURE;
-    else
-         return EXIT_SUCCESS;
+    //Write a text file with the phrase "Hello"
+    std::ofstream myfile;
+    myfile.open ("output_file.txt");
+    if(!myfile.is_open())
+    {
+        std::cerr<<"Failed to open file: output_file.txt"<<std::endl; 
+        return EXIT_FAILURE;
+    }
+    if(!myfile.good())
+    {
+        std::cerr<<"Failed, some error ocurred"<<std::endl;
+        return EXIT_FAILURE;
+    }
+    myfile << "Hello.\n";
+    myfile.close();
 
-    return 0;
+    return EXIT_SUCCESS;
 }
